@@ -9,7 +9,7 @@
  *
 */
 
-function ImageMarkUp(p_draw_image) {
+function flat_canvas(p_draw_image) {
     "use strict";
 
     var canvas = document.getElementById("simple_scetch");
