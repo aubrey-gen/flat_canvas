@@ -1,0 +1,12 @@
+flat_canvas.js
+--------------
+
+Brief introduction
+------------------------
+
+Flat canvas is my first real attempt at creating a reusable javascript library. I created this library after not being able to find a simple javascript library to meet my goals. Even if there is a simple library out there that I was 'lazy' to find, I decided to create and improve this library. The main goal is to create a good useful library to be used by anyone and to improve my coding.
+
+What does it do?
+-----------------------
+
+The library adds the functionality to rotate, draw an image using different colours and saving the changes as an image to a canvas.
