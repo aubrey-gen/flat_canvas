@@ -3,7 +3,7 @@
    document, event, Image, $
 */
 /* 
- * functions for image marks of defects captured
+ * Rotate and draw on image on the canvas
  *
  *
  *
@@ -201,9 +201,13 @@ function ImageMarkUp(p_draw_image) {
                 context.drawImage(captured_image, 0, 0);
             };          
                         
-
-            if (p_Canvas === null || p_Canvas === undefined || p_Context === null || p_Context === undefined) {
-                p_Canvas = document.getElementById("simple_scetch");
+            //Check if canvas was assigned  
+            if (p_Canvas === null || p_Canvas === undefined ){
+                alert("Canvas not assing");
+                return;
+            }
+            //check if context was created
+            if (p_Context === null || p_Context === undefined) {            
                 p_Context = p_Canvas.getContext("2d");
             }
             //            
@@ -242,40 +246,3 @@ function ImageMarkUp(p_draw_image) {
     };
 }
  
-/*******************************************/
-var test_canvas = document.getElementById('simple_scetch');
-var ctx = test_canvas.getContext('2d');
-var g_draw_image = '540x960.jpg';
-
-var qgate_imagemarkup = new ImageMarkUp(g_draw_image);
-qgate_imagemarkup.init(test_canvas, ctx);
-
-/**********************************/
-
-$('a[href^="#simple_scetch"]').click(function () {
-    "use strict";
-    //Get the colour
-    var g_colour = $(this).data('color');
-    qgate_imagemarkup.change_drawcolour(g_colour);
-
-});
-
-$(".clear_screen").click(function () {
-    "use strict";
-    qgate_imagemarkup.refresh();
-    $("ul.canvas_markup").empty();
-
-});
-
-$("#savemarkup").click(function () {
-    "use strict";
-    qgate_imagemarkup.save_marking();
-
-});
-
-$("#rotate").click(function () {
-    "use strict";
-    // rotate the canvas 90 degrees each time the button is pressed
-    qgate_imagemarkup.rotate();
-
-});
